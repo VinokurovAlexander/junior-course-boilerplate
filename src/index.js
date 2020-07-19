@@ -1,12 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import ProductList from "./components/ProductsList/ProductsList"
-import Title from "./components/Title/Title"
-import Form from  "./components/Form/Form";
-import products from "./products.json";
+import ProductList from './components/ProductList'
+import Title from './components/Title'
+import Form from './components/Form';
+import products from './products.json';
 
-import "./index.css"
+import './index.css'
+
+const DEFAULT_SALE_SIZE = 50;
 
 class App extends React.Component {
   constructor(props) {
@@ -14,34 +16,39 @@ class App extends React.Component {
 
     this.state = {
       products: this.props.products,
-      price: this.getMinAndMaxPrice()
+      price: this.getPrice()
     };
-
-    this.updateData = this.updateData.bind(this);
   }
 
-  getMinPrice() {
+  getMinPrice = () => {
     return this.props.products.reduce((a,b) => a.price < b.price ? a : b).price;
   }
 
-  getMaxPrice() {
+  getMaxPrice = () => {
     return this.props.products.reduce((a,b) => a.price > b.price ? a : b).price;
   }
 
-  getMinAndMaxPrice() {
+  getPrice = () => {
     return {
       min: this.getMinPrice(),
-      max: this.getMaxPrice()
+      max: this.getMaxPrice(),
+      sale: DEFAULT_SALE_SIZE
     }
   }
 
-  updateData(value) {
+  updateData = (value) =>  {
     this.setState({price: value})
   }
 
-  filter() {
+  getProducts = () => {
+    const currentPrice = this.state.price;
+    const saleSize = currentPrice.sale / 100 ;
+
+
     return this.state.products.filter((product) =>
-      (product.price >= this.state.price.min) && (product.price <= this.state.price.max))
+        (product.price >= currentPrice.min)
+        && (product.price <= currentPrice.max)
+        && (product.price === (product.subPriceContent - product.subPriceContent * saleSize)))
   }
 
   render() {
@@ -52,7 +59,7 @@ class App extends React.Component {
           <Form
             price={this.state.price}
             updateData={this.updateData}/>
-          <ProductList products={this.filter()}/>
+          <ProductList products={this.getProducts()}/>
         </div>
       </div>
     )
