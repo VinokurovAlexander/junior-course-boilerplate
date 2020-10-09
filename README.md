@@ -1,6 +1,6 @@
 ## Работа с проектом
 
-Данный шаблон содержит уже готовую и настроенную сборку(используется [Create React Index](https://github.com/facebook/create-react-app))
+Данный шаблон содержит уже готовую и настроенную сборку(используется [Create React App](https://github.com/facebook/create-react-app))
 
 Проект управляет при помощи npm scripts, которые можно вызвать в консоли в папке проекта.
 
