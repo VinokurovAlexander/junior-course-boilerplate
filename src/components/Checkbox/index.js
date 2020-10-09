@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
 import LogRender from '../LogRender';
 
@@ -14,29 +13,31 @@ class Checkbox extends LogRender {
     }
   }
 
-  onChange = evt => {
+  onChange = event => {
     this.setState({
       checked: !this.state.checked
     })
 
-    const changedCategory = evt.target.value;
+    const changedCategory = event.target.value;
 
     this.props.onChange && this.props.onChange(changedCategory);
   }
 
   render() {
+    const { checked, text } = this.props;
+
     return(
-      <div className={`${styles.checkbox} ${this.props.checked ? styles.checked : ''}`}>
+      <div className={`${styles.checkbox} ${checked ? styles.checked : ''}`}>
         <input
           type='checkbox'
-          id={this.props.text}
+          id={text}
           name="filter"
-          value={this.props.text}
+          value={text}
           checked={this.state.checked}
           onChange={this.onChange}
         />
-        <label htmlFor={this.props.text}>
-          <p className={styles.text}>{this.props.text}</p>
+        <label htmlFor={text}>
+          <p className={styles.text}>{text}</p>
         </label>
       </div>
     )

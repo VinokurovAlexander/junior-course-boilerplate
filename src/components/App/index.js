@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from '../Title'
-import Sidebar from '../../containers/sidebar';
-import List from '../../containers/list';
+import Sidebar from '../../containers/Sidebar';
+import List from '../../containers/List';
 import { getUrlVars } from '../../utils';
 
 import './index.css'
@@ -70,15 +70,16 @@ class App extends React.PureComponent {
     window.history.pushState(checkedCategories.join(), PAGE_TITLE, categoriesURl)
   }
 
-  setFromHistory = evt => {
-    const checkedCategories = evt.state;
+  setFromHistory = event => {
+    const { resetFilter, updateCheckedCategories } = this.props;
+    const checkedCategories = event.state;
 
     if (checkedCategories === DEFAULT_URL) {
-      this.props.resetFilters();
+      resetFilter();
       return;
     }
 
-    this.props.updateCheckedCategories(checkedCategories.split(','))
+    updateCheckedCategories(checkedCategories.split(','))
   }
 
   render() {

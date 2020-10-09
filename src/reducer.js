@@ -1,10 +1,15 @@
 import { initialState } from './store';
 import { DEFAULT_URL, PAGE_TITLE } from './components/App';
 
+export const RESET_FILTER = 'RESET_FILTER';
+export const CHANGE_FILTER = 'CHANGE_FILTER';
+export const CHANGE_PRICE = 'CHANGE_PRICE';
+export const UPDATE_CHECKED_CATEGORIES = 'UPDATE_CHECKED_CATEGORIES';
+
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'CHANGE_FILTER': {
-      const changedCategory = action.payload.changedCategory;
+    case CHANGE_FILTER: {
+      const { changedCategory } = action.payload;
       const checkedCategories = state.checkedCategories.slice();
 
       if (checkedCategories.includes(changedCategory)) {
@@ -20,7 +25,7 @@ export const reducer = (state = initialState, action) => {
       }
     }
 
-    case 'RESET_FILTER': {
+    case RESET_FILTER: {
       window.history.pushState(DEFAULT_URL, `${PAGE_TITLE}`, DEFAULT_URL);
 
       return {
@@ -29,13 +34,12 @@ export const reducer = (state = initialState, action) => {
       }
     }
 
-    case 'CHANGE_PRICE': {
-      const inputName = action.payload.inputName;
-      const value = action.payload.changedValue;
+    case CHANGE_PRICE: {
+      const { inputName, changedValue } = action.payload;
 
       const price = {
         ...state.price,
-        [inputName]: value
+        [inputName]: changedValue
       }
 
       return {
@@ -44,8 +48,8 @@ export const reducer = (state = initialState, action) => {
       }
     }
 
-    case 'UPDATE_CHECKED_CATEGORIES': {
-      const checkedCategories = action.payload.checkedCategories;
+    case UPDATE_CHECKED_CATEGORIES: {
+      const { checkedCategories } =  action.payload;
 
       return {
         ...state,

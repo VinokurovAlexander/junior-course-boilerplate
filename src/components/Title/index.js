@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './index.module.css'
 
-const Title = (props) => {
-  return  (
-    <h1 className={styles.title}>{props.text}</h1>
-  );
-};
+const Title = props => <h1 className={styles.title}>{props.text}</h1>
 
 Title.propTypes = {
   text: PropTypes.string.isRequired
