@@ -6,10 +6,10 @@ export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const CHANGE_PRICE = 'CHANGE_PRICE';
 export const UPDATE_CHECKED_CATEGORIES = 'UPDATE_CHECKED_CATEGORIES';
 
-export const reducer = (state = initialState, action) => {
-  switch (action.type) {
+export const reducer = (state = initialState, { type, payload }) => {
+  switch (type) {
     case CHANGE_FILTER: {
-      const { changedCategory } = action.payload;
+      const { changedCategory } = payload;
       const checkedCategories = state.checkedCategories.slice();
 
       if (checkedCategories.includes(changedCategory)) {
@@ -35,7 +35,7 @@ export const reducer = (state = initialState, action) => {
     }
 
     case CHANGE_PRICE: {
-      const { inputName, changedValue } = action.payload;
+      const { inputName, changedValue } = payload;
 
       const price = {
         ...state.price,
@@ -49,7 +49,7 @@ export const reducer = (state = initialState, action) => {
     }
 
     case UPDATE_CHECKED_CATEGORIES: {
-      const { checkedCategories } =  action.payload;
+      const { checkedCategories } =  payload;
 
       return {
         ...state,
