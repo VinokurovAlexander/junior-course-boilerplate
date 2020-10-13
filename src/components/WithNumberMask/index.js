@@ -1,15 +1,14 @@
 import React from 'react';
 import toInt from 'csssr-school-utils/lib/toInt';
 
-const getDisplayName = (WrappedComponent) => {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
+const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
-const WithNumberMask = (WrappedComponent) => {
+const WithNumberMask = WrappedComponent => {
   class WithNumberMask extends React.Component {
-    handleChange = (evt) => {
-      const inputValue = toInt(evt.target.value);
-      this.props.onChange && this.props.onChange(evt, inputValue);
+    handleChange = event => {
+      const { value, name } = event.target;
+
+      this.props.onChange && this.props.onChange(name, toInt(value));
   };
 
     render() {

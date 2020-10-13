@@ -1,19 +1,19 @@
 import React from 'react';
 import propTypes from 'prop-types';
-
-import LogRender from '../LogRender';
 import WithNumberMask from '../WithNumberMask';
 
 import styles from './index.module.css';
 
-class Input extends LogRender {
+class Input extends React.PureComponent {
   render() {
+    const { name, value, handleChange } = this.props;
+
     return (
       <input
         className={styles.input}
-        name={this.props.name}
-        value={this.props.value}
-        onChange={this.props.handleChange} />
+        name={name}
+        value={value}
+        onChange={handleChange} />
         );
     }
 }
