@@ -1,0 +1,1 @@
+export const DEFAULT_DISCOUNT_SIZE = 50;

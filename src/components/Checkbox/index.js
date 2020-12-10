@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LogRender from '../LogRender';
+import { Label, Input, Text } from './styles';
 
-import styles from './index.module.css';
-
-class Checkbox extends LogRender {
+class Checkbox extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -27,19 +25,17 @@ class Checkbox extends LogRender {
     const { checked, text } = this.props;
 
     return(
-      <div className={`${styles.checkbox} ${checked ? styles.checked : ''}`}>
-        <input
-          type='checkbox'
-          id={text}
-          name="filter"
-          value={text}
-          checked={this.state.checked}
-          onChange={this.onChange}
-        />
-        <label htmlFor={text}>
-          <p className={styles.text}>{text}</p>
-        </label>
-      </div>
+        <Label htmlFor={text} checked={checked}>
+          <Text>{text}</Text>
+          <Input
+            type='checkbox'
+            id={text}
+            name="filter"
+            value={text}
+            checked={this.state.checked}
+            onChange={this.onChange}
+          />
+        </Label>
     )
   }
 }

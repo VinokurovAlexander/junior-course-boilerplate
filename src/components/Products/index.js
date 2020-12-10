@@ -1,44 +1,33 @@
 import React from 'react';
 import ProductItemUI from 'csssr-school-product-card';
 import PropTypes from 'prop-types';
-import LogRender from '../LogRender';
-
-import styles from './index.module.css';
+import { Component, ListItem } from './style';
 
 const ratingComponent = ({ isFilled }) => {
   return <div className={isFilled ? 'starFill' : undefined} />;
 };
 
-class ProductItem extends LogRender {
+class Products extends React.PureComponent {
   render() {
+    const { products } = this.props;
+
     return (
-      <ProductItemUI {...this.props} />
+      <Component>
+        {products.map((item, number) =>
+          <ListItem key={number}>
+            <ProductItemUI
+              title = {item.name}
+              price = {item.price}
+              subPriceContent = {item.subPriceContent}
+            />
+          </ListItem>)
+        }
+      </Component>
     )
   }
 }
 
-export default class Products extends React.PureComponent {
-  generateList = () =>
-    this.props.products.map((item, number) =>
-      <li key={number}>
-        <ProductItem
-          title = {item.name}
-          price = {item.price}
-          subPriceContent = {item.subPriceContent}
-        />
-      </li>
-  )
-
-  render() {
-    return (
-      <ul className={styles.products}>
-        {this.generateList()}
-      </ul>
-    )
-  }
-}
-
-ProductItem.propTypes = {
+ProductItemUI.propTypes = {
   isInStock: PropTypes.bool.isRequired,
   img: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -49,7 +38,7 @@ ProductItem.propTypes = {
   ratingComponent: PropTypes.func.isRequired
 };
 
-ProductItem.defaultProps = {
+ProductItemUI.defaultProps = {
   isInStock: true,
   img: '',
   title: 'Название первого товара',
@@ -59,3 +48,5 @@ ProductItem.defaultProps = {
   rating: 4,
   ratingComponent: ratingComponent
 };
+
+export default Products;
