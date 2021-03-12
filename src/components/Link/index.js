@@ -7,12 +7,7 @@ class Link extends React.Component {
   handleClick = event => {
     event.preventDefault();
 
-    const { href, isDisabled, handleLinkClick } = this.props;
-
-    if (isDisabled) {
-      return;
-    }
-
+    const { href, handleLinkClick } = this.props;
     const index = toInt(href);
 
     handleLinkClick && handleLinkClick(index);
@@ -22,7 +17,7 @@ class Link extends React.Component {
 
     return (
         <Component
-          isDisabled={isDisabled}
+          disabled={isDisabled}
           isBig={isBig}
           isActive={isActive}
           href={href}
