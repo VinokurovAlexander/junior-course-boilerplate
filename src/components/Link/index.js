@@ -1,42 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { toInt } from 'csssr-school-utils';
+import { Link, withRouter } from 'react-router-dom';
 import { Component } from './style';
+const queryString = require('query-string');
 
-class Link extends React.Component {
-  handleClick = event => {
-    event.preventDefault();
+const LinkUI = ({ children, isDisabled, isBig, isActive, index, location }) => {
+  const query = location.search;
+  const parsedQuery = queryString.parse(query,
+    {
+      arrayFormat: 'comma',
+      parseNumbers: true
+    });
+  const url = `?${queryString.stringify({...parsedQuery, page: index}, { skipEmptyString: true, arrayFormat: 'comma' })}`;
 
-    const { href, handleLinkClick } = this.props;
-    const index = toInt(href);
-
-    handleLinkClick && handleLinkClick(index);
-  }
-  render() {
-    const { href, children, isDisabled, isBig, isActive } = this.props;
-
-    return (
-        <Component
-          disabled={isDisabled}
-          isBig={isBig}
-          isActive={isActive}
-          href={href}
-          onClick={this.handleClick}
-        >
-          {children}
-        </Component>
-    )
-  }
+  return (
+    <Component isDisabled={isDisabled} isBig={isBig} isActive={isActive}>
+      <Link to={url}>
+        {children}
+      </Link>
+    </Component>
+  )
 }
 
-Link.propTypes = {
-  href: PropTypes.string,
+
+LinkUI.propTypes = {
+  index: PropTypes.number,
   isDisabled: PropTypes.bool,
-  handleClickLink: PropTypes.func
+  isBig: PropTypes.bool,
+  isActive: PropTypes.bool,
 }
 
-Link.defaultProps = {
-  isDisable: false
+LinkUI.defaultProps = {
+  isDisable: false,
+  isBig: false,
+  isActive: false
 }
 
-export default Link;
+export default withRouter(LinkUI);

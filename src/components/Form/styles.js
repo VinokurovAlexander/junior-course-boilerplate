@@ -31,7 +31,7 @@ const Label = styled.label`
   cursor: pointer;
 `
 
-const Button = styled.button`
+const Button = styled.a`
   display: inline-block;
 
   box-sizing: border-box;
@@ -52,9 +52,4 @@ const Button = styled.button`
   }
 `
 
-const Filters = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`
-
-export { Container, Title, Label, Button, Filters };
+export { Container, Title, Label, Button };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const AppContainer = styled.div`
+const Component = styled.div`
   position: relative;
 
   display: flex;
@@ -14,9 +14,9 @@ const AppContainer = styled.div`
   padding-right: 30px;
 `
 
-const AppContent = styled.div`
+const Content = styled.div`
   display: flex;
   align-items: flex-start;
 `
 
-export { AppContainer, AppContent }
+export { Component, Content }

@@ -1,13 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../../containers/PageLink';
+import Link from '../../components/Link';
 import { Component } from './style';
-import { getRange } from '../../utils';
 
 const PAGE_LINK_NEIGHBOUR_COUNT = 1;
 const MAX_LINK_BUTTONS_COUNT = 2 * PAGE_LINK_NEIGHBOUR_COUNT + 5 // 1st and last page link + active link + hidden page link x 2 = 5;
 const FIRST_PAGE_INDEX = 1;
 const HIDDEN_PAGES_INDEX = 'HIDDEN_PAGES';
+
+export const getRange = (from, to, step = 1) => {
+  let i = from;
+  const range = [];
+
+  while (i <= to) {
+    range.push(i);
+    i += step;
+  }
+
+  return range;
+}
 
 class Navigation extends React.PureComponent {
   renderPageLinks = (pages, activePageIndex) =>
@@ -18,7 +29,7 @@ class Navigation extends React.PureComponent {
 
       return (
           <Link
-            href={`/?page=${pageIndex}`}
+            index={pageIndex}
             isActive={pageIndex === activePageIndex}
             key={pageIndex}
           >
@@ -74,7 +85,7 @@ class Navigation extends React.PureComponent {
           <Link
             isBig
             isDisabled={activePageIndex === FIRST_PAGE_INDEX}
-            href={`/?page=${activePageIndex - 1}`}
+            index={activePageIndex - 1}
           >
             Назад
           </Link>
@@ -82,7 +93,7 @@ class Navigation extends React.PureComponent {
           <Link
             isBig
             isDisabled={activePageIndex === pagesCount}
-            href={`/?page=${activePageIndex + 1}`}
+            index={activePageIndex + 1}
           >
             Вперёд
           </Link>

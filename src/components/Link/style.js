@@ -1,31 +1,54 @@
 import styled from 'styled-components';
 
-const Component = styled.button`
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Component = styled.div`
+  a {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  min-width: 34px;
-  width: ${props => props.isBig ? '88px' : 'auto'};
-  height: 32px;
+    min-width: 34px;
+    width: ${props => props.isBig ? '88px' : 'auto'};
+    height: 32px;
 
-  color: ${props => props.isActive ? '#fff' : '#7f8fa4'};
-  background-color: ${props => props.isActive ? '#5695ed' : '#fff'};
-  border: 1px solid ${props => props.isActive ? '#5695ed' : '#c5cfde'};
-  font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+    color: ${props => {
+      switch (true) {
+        case props.isDisabled: {
+          return 'lightgrey';
+        }
+        case props.isActive: {
+          return '#fff';
+        }
+        default: {
+          return '#7f8fa4';
+        }
+      }
+    }};
+    background-color: ${props => props.isActive ? '#5695ed' : '#fff'};
+    border: 1px solid ${props => {
+      switch (true) {
+        case (props.isActive): {
+          return '#5695ed'
+        }
 
-  &:hover {
-    opacity: 0.5;
-  }
+        case (props.isDisabled): {
+          return 'lightgrey'
+        }
 
-  &:disabled {
-    pointer-events: none;
-    border-color: lightgrey;
-    color: lightgrey;
+        default: {
+          return '#c5cfde'
+        }
+      }
+    }};
+
+    font-size: 14px;
+    cursor: 'pointer';
+    transition: opacity 0.3s ease;
+    pointer-events: ${props => props.isDisabled ? 'none' : 'auto'};
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 `
 

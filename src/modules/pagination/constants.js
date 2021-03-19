@@ -1,2 +1,0 @@
-export const DEFAULT_ACTIVE_PAGE_INDEX = 1;
-export const PRODUCTS_ON_PAGE_COUNT = 6;
