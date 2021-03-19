@@ -1,16 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Component } from './styles';
 
-import styles from './index.module.css'
-
-const Title = props => <h1 className={styles.title}>{props.text}</h1>
+const Title = ({ text }) => <Component>{text}</Component>
 
 Title.propTypes = {
   text: PropTypes.string.isRequired
-};
-
-Title.defaultProps = {
-  text: ''
 };
 
 export default Title;

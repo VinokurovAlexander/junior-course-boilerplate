@@ -1,5 +1,5 @@
 import React from 'react';
-import toInt from 'csssr-school-utils/lib/toInt';
+import { toInt } from 'csssr-school-utils';
 
 const getDisplayName = WrappedComponent => WrappedComponent.displayName || WrappedComponent.name || 'Component';
 

@@ -40,5 +40,901 @@
     "price": 600,
     "subPriceContent": 1500,
     "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
+  },
+  {
+    "id": 1,
+    "name": "Имя товара1",
+    "price": 900,
+    "subPriceContent": 1000,
+    "category": "books"
+  },
+  {
+    "id": 2,
+    "name": "Имя товара2",
+    "price": 800,
+    "subPriceContent": 800,
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "name": "Имя товара3",
+    "price": 1400,
+    "subPriceContent": 2800,
+    "category": "books"
+  },
+  {
+    "id": 4,
+    "name": "Имя товара4",
+    "price": 2500,
+    "subPriceContent": 5000,
+    "category": "clothes"
+  },
+  {
+    "id": 5,
+    "name": "Имя товара5",
+    "price": 1200,
+    "subPriceContent": 2300,
+    "category": "books"
+  },
+  {
+    "id": 6,
+    "name": "Имя товара6",
+    "price": 600,
+    "subPriceContent": 1500,
+    "category": "clothes"
+  },
+  {
+    "id": 7,
+    "name": "Имя товара7",
+    "price": 700,
+    "subPriceContent": 1400,
+    "category": "books"
+  },
+  {
+    "id": 8,
+    "name": "Имя товара8",
+    "price": 800,
+    "subPriceContent": 1600,
+    "category": "clothes"
+  },
+  {
+    "id": 9,
+    "name": "Имя товара9",
+    "price": 900,
+    "subPriceContent": 1800,
+    "category": "books"
+  },
+  {
+    "id": 10,
+    "name": "Имя товара10",
+    "price": 1000,
+    "subPriceContent": 2000,
+    "category": "clothes"
+  },
+  {
+    "id": 11,
+    "name": "Имя товара11",
+    "price": 1100,
+    "subPriceContent": 2200,
+    "category": "clothes"
+  },
+  {
+    "id": 12,
+    "name": "Имя товара11",
+    "price": 1200,
+    "subPriceContent": 2400,
+    "category": "clothes"
   }
 ]

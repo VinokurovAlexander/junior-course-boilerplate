@@ -1,23 +1,33 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Form from '../../components/Form';
-import { CHANGE_PRICE, RESET_FILTER, CHANGE_FILTER } from '../../reducer';
+import {
+  resetCategories,
+  changeCategory,
+  getCategories,
+  getCheckedCategories
+} from '../../modules/categories';
+import {
+  setPrice,
+  getPrice
+} from '../../modules/price';
 
-const mapStateToProps = ({ price, categories, checkedCategories }) => {
-  return {
-    price,
-    categories,
-    checkedCategories
-  }
-}
+const mapStateToProps = state => ({
+  price: getPrice(state),
+  categories: getCategories(state),
+  checkedCategories: getCheckedCategories(state)
+})
 
 const mapDispatchToProps = dispatch => {
+  const actions = bindActionCreators({ changeCategory, setPrice, resetCategories }, dispatch);
+
   return {
-    handlePriceChange: (name, value) => dispatch({ type: CHANGE_PRICE , payload: { inputName: name, changedValue: value }}),
-    handleResetFilter: () => dispatch({ type: RESET_FILTER }),
-    handleCategoryChange: changedCategory => dispatch({ type: CHANGE_FILTER, payload: { changedCategory }})
+    handlePriceChange: (name, value) => actions.setPrice(name, value),
+    handleResetFilter: () => actions.resetCategories(),
+    handleCategoryChange: category => actions.changeCategory(category)
   }
 }
 
-const App = connect(mapStateToProps, mapDispatchToProps)(Form);
+const Sidebar = connect(mapStateToProps, mapDispatchToProps)(Form);
 
-export default App;
+export default Sidebar;

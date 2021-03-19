@@ -1,43 +1,37 @@
-.form {
-  position: absolute;
-  left: 0;
-  top: 104px;
+import styled from 'styled-components';
 
+const Container = styled.form`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  flex-shrink: 0;
 
   width: 256px;
-}
+  margin-right: 48px;
+`
 
-.form h2 {
+const Title = styled.h2`
   width: 100%;
   margin-top: 0;
 
   font-size: 20px;
   font-weight: 600;
-}
+`
 
-.label {
+const Label = styled.label`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
+  width: ${props => props.isShort ? '47%' : '100%'};
   margin-bottom: 15px;
 
   font-weight: 600;
-}
-
-.form label:hover {
   cursor: pointer;
-}
+`
 
-.price {
-  width: 47%;
-}
-
-.form button {
+const Button = styled.button`
   display: inline-block;
 
   box-sizing: border-box;
@@ -52,18 +46,15 @@
   cursor: pointer;
   transition: opacity ease-in 0.3s;
   outline: none;
-}
 
-.form button:hover {
-  opacity: 0.7;
-}
+  &:hover {
+    opacity: 0.7;
+  }
+`
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.filters {
+const Filters = styled.div`
   display: flex;
   flex-wrap: wrap;
-}
+`
+
+export { Container, Title, Label, Button, Filters };

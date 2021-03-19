@@ -1,17 +1,21 @@
 import { connect }  from 'react-redux';
+import { bindActionCreators } from 'redux';
 import AppUI from '../../components/App';
-import { RESET_FILTER, UPDATE_CHECKED_CATEGORIES } from '../../reducer';
+import { setPage } from '../../modules/pagination';
+import { setCategories, getCheckedCategories } from '../../modules/categories';
+import { getActivePageIndex } from '../../modules/pagination';
 
-const mapStateToProps = ({ checkedCategories }) => {
-  return {
-    checkedCategories
-  }
-};
+const mapStateToProps = state => ({
+    checkedCategories: getCheckedCategories(state),
+    activePageIndex: getActivePageIndex(state)
+})
 
 const mapDispatchToProps = dispatch => {
+  const actions = bindActionCreators({ setPage, setCategories }, dispatch);
+
   return {
-    updateCheckedCategories: checkedCategories => dispatch({ type: UPDATE_CHECKED_CATEGORIES, payload: { checkedCategories }}),
-    resetFilter: () => dispatch({ type: RESET_FILTER })
+    setPage: page => actions.setPage(page),
+    setCheckedCategories: categories => actions.setCategories(categories)
   }
 };
 

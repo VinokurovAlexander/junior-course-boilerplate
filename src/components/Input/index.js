@@ -1,16 +1,14 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Component } from './style';
 import WithNumberMask from '../WithNumberMask';
-
-import styles from './index.module.css';
 
 class Input extends React.PureComponent {
   render() {
     const { name, value, handleChange } = this.props;
 
     return (
-      <input
-        className={styles.input}
+      <Component
         name={name}
         value={value}
         onChange={handleChange} />
