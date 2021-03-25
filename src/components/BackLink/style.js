@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import ArrowIcon from './arrow.svg';
 
-const Component = styled.div`
+const Component = styled.button`
   position: relative;
   padding-left: 40px;
 
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   transition: opacity ease-in 0.3s;
 

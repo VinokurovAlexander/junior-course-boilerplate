@@ -8,7 +8,7 @@ import { history } from '../../store';
 const App = () => (
   <ConnectedRouter history={history}>
     <Route exact path={'/'} component={MainPage} />
-    <Route path={'/id=:number(\\d+)'} component={ProductPage} />
+    <Route path={'/products/:id(\\d+)'} component={ProductPage} />
   </ConnectedRouter>
 )
 

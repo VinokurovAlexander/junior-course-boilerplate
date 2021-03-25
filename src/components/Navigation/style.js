@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Component as Link } from  '../Link/style';
+import { Component as PageLink } from  '../PageLink/style';
 
 const Component = styled.div`
   display: flex;
@@ -7,17 +7,17 @@ const Component = styled.div`
   align-items: center;
   padding-top: 30px;
 
-  ${Link} {
+  ${PageLink} {
     margin-left: 2px;
     margin-right: 2px;
   }
 
 
-  ${Link}:first-child {
+  ${PageLink}:first-child {
     margin-right: 16px;
   }
 
-  ${Link}:last-child {
+  ${PageLink}:last-child {
     margin-left: 16px;
   }
 `;

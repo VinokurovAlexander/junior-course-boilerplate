@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../../components/Link';
+import { withRouter } from 'react-router-dom';
+import PageLink from '../../components/PageLink';
 import { Component } from './style';
+const queryString = require('query-string');
 
 const PAGE_LINK_NEIGHBOUR_COUNT = 1;
 const MAX_LINK_BUTTONS_COUNT = 2 * PAGE_LINK_NEIGHBOUR_COUNT + 5 // 1st and last page link + active link + hidden page link x 2 = 5;
@@ -21,20 +23,32 @@ export const getRange = (from, to, step = 1) => {
 }
 
 class Navigation extends React.PureComponent {
+  getPageUrl = index => {
+    const { location } = this.props;
+    const query = location.search;
+    const parsedQuery = queryString.parse(query,
+      {
+        arrayFormat: 'comma',
+        parseNumbers: true
+      });
+
+    return `?${queryString.stringify({...parsedQuery, page: index}, { skipEmptyString: true, arrayFormat: 'comma' })}`;
+  }
+
   renderPageLinks = (pages, activePageIndex) =>
     pages.map(pageIndex => {
       if (pageIndex === HIDDEN_PAGES_INDEX) {
-        return <Link key={Math.random()} isDisabled>...</Link>
+        return <PageLink key={Math.random()} isDisabled>...</PageLink>
       }
 
       return (
-          <Link
-            index={pageIndex}
-            isActive={pageIndex === activePageIndex}
+          <PageLink
             key={pageIndex}
+            isActive={pageIndex === activePageIndex}
+            url={this.getPageUrl(pageIndex)}
           >
             {pageIndex}
-          </Link>
+          </PageLink>
       )
     })
 
@@ -82,21 +96,21 @@ class Navigation extends React.PureComponent {
 
     return (
       <Component>
-          <Link
+          <PageLink
             isBig
             isDisabled={activePageIndex === FIRST_PAGE_INDEX}
-            index={activePageIndex - 1}
+            url={this.getPageUrl(activePageIndex - 1)}
           >
             Назад
-          </Link>
+          </PageLink>
           {this.renderNavigation(activePageIndex, pagesCount)}
-          <Link
+          <PageLink
             isBig
             isDisabled={activePageIndex === pagesCount}
-            index={activePageIndex + 1}
+            url={this.getPageUrl(activePageIndex + 1)}
           >
             Вперёд
-          </Link>
+          </PageLink>
       </Component>
     )
   }
@@ -107,4 +121,4 @@ Navigation.propTypes = {
   pagesCount: PropTypes.number.isRequired
 }
 
-export default Navigation;
+export default withRouter(Navigation);

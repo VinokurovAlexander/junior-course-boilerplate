@@ -16,7 +16,7 @@ const ProductItem = ({ isDetailPage, isInStock, img, title, price, subPriceConte
       <Image src={img} alt='Изображение товара' />
       <div>
         {id ? (
-          <Link to={`id=${id}`}>
+          <Link to={`products/${id}`}>
             <Title>{title}</Title>
           </Link>
           ) : <Title>{title}</Title>
