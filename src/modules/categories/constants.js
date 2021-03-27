@@ -1,1 +1,0 @@
-export const DEFAULT_CHECKED_CATEGORIES = [];

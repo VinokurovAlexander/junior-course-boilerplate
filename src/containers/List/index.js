@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import ListUI from '../../components/List';
-import { getProductsByPage, getActivePageIndex } from '../../modules/pagination';
+import { getProductsByPrice } from '../../modules/price';
 
 const mapStateToProps = state => ({
-    activePageIndex: getActivePageIndex(state),
-    productsByPage: getProductsByPage(state),
+  productsByPrice: getProductsByPrice(state)
 })
 
 export default connect(mapStateToProps)(ListUI);

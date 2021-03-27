@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
-import categories from './modules/categories';
-import pagination from './modules/pagination';
+import { connectRouter } from 'connected-react-router';
 import price from './modules/price';
 
-const reducerApp = combineReducers({
-  categories,
-  pagination,
+const createReducerApp = history => combineReducers({
   price,
+  router: connectRouter(history)
 })
 
-export default reducerApp;
+export default createReducerApp;
