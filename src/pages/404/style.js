@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 const Component = styled.div`
-  width: 736px;
+  display: flex;
+  margin-top: 5%;
+  flex-direction: column;
+  height: 100vh;
 `
 
 export { Component };

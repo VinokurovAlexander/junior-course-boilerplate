@@ -4,11 +4,20 @@ import { Link } from 'react-router-dom';
 import { Component, InStock, Image, Title, Rating, Price } from './style';
 import RatingItem from '../Rating';
 import PriceItem from '../Price';
-import defaultImage from './image.jpg';
 
 const range = to => [...Array(to).keys()].map(i => i + 1)
 
-const ProductItem = ({ isDetailPage, isInStock, img, title, price, subPriceContent, maxRating, rating, id }) =>
+const ProductItem = ({
+  isDetailPage,
+  isInStock,
+  img,
+  title,
+  price,
+  discount,
+  maxRating = 5,
+  rating,
+  id
+}) =>
     <Component isInStock={isInStock} isDetailPage={isDetailPage}>
       <InStock isInStock={isInStock}>
         {isInStock ? 'В наличии' : 'Недоступен'}
@@ -26,7 +35,7 @@ const ProductItem = ({ isDetailPage, isInStock, img, title, price, subPriceConte
         </Rating>
         <Price>
           <PriceItem value={price} />
-          <PriceItem isSmall value={subPriceContent} />
+          <PriceItem isSmall value={price - price * (discount / 100) } />
         </Price>
       </div>
     </Component>
@@ -37,20 +46,9 @@ ProductItem.propTypes = {
   img: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  subPriceContent: PropTypes.number.isRequired,
-  maxRating: PropTypes.number.isRequired,
+  discount: PropTypes.number.isRequired,
+  maxRating: PropTypes.number,
   rating: PropTypes.number.isRequired,
-}
-
-ProductItem.defaultProps = {
-  isDetailPage: false,
-  isInStock: true,
-  img: defaultImage,
-  title: 'Название первого товара',
-  price: '23 000',
-  subPriceContent: '23 000',
-  maxRating: 5,
-  rating: 4,
 }
 
 export default ProductItem;

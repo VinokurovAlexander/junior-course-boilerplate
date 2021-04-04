@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from './style';
 
-const EmptyPage = () => <Component />
+const Background = () => <Component />
 
-export default EmptyPage;
+export default Background;

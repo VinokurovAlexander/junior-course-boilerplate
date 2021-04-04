@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 const Component = styled.ul`
-  margin: 0;
-  padding: 0;
-
   display: flex;
   flex-wrap: wrap;
+
+  width: 100%;
+  min-height: 640px;
+  margin: 0;
+  padding: 0;
 
   list-style: none;
 `

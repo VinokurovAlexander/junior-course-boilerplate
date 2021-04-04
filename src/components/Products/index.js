@@ -5,22 +5,31 @@ import { Component, ListItem } from './style';
 
 const Products = ({ products }) => (
   <Component>
-    {products.map(({ name, price, subPriceContent, isInStock, id }, index) =>
+    {products.map(({ name, price, discount, status, id, img, stars }, index) =>
       <ListItem key={`${index}_${name}`}>
         <ProductItem
           title = {name}
           price = {price}
-          subPriceContent = {subPriceContent}
-          isInStock={isInStock}
+          discount={discount}
+          isInStock={status === 'IN_STOCK'}
           id={id}
+          img={img}
+          rating={stars}
         />
-      </ListItem>)
-    }
+      </ListItem>
+    )}
   </Component>
 )
 
+Products.defaultProps = {
+  products: [],
+  isLoading: false
+}
+
+
 Products.propTypes = {
-  products: PropTypes.array.isRequired
+  products: PropTypes.array,
+  isLoading: PropTypes.bool,
 }
 
 export default Products;
