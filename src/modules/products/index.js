@@ -78,7 +78,11 @@ export const fetchProducts = () => dispatch => {
       }
     })
     .then(data => {
-      dispatch(setSuccessLoading(data))
+      if (data.result === 'ERROR') {
+        dispatch(setErrorLoading())
+      } else {
+        dispatch(setSuccessLoading(data))
+      }
     })
     .catch(() => dispatch(setErrorLoading()))
 }
