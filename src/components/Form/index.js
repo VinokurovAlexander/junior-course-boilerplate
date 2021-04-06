@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { Container, Title, Label, Button } from './styles';
+import { Component, Title, Label, Button } from './styles';
 import Input from '../Input';
-import Categories from '../Categories';
+import Categories from '../../containers/Categories';
 
 const Form = ({
   price: { max, min, discount },
   handlePriceChange,
 }) => (
-  <Container>
+  <Component>
     <Title>Цена</Title>
     <Label isShort>
       <span>от</span>
@@ -27,10 +26,10 @@ const Form = ({
     </Label>
     <Title>Категории</Title>
     <Categories />
-    <Link to='/' component={Button}>
+    <Button to='/'>
       Cбросить фильтры
-    </Link>
-  </Container>
+    </Button>
+  </Component>
 );
 
 Form.propTypes = {

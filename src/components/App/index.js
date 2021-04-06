@@ -1,16 +1,40 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
-import MainPage from '../../pages/MainPage';
-import ProductPage from '../../pages/ProductPage';
+import { toInt } from 'csssr-school-utils';
+import MainPage from '../../containers/MainPage';
+import ProductPage from '../../containers/ProductPage';
 import { history } from '../../store';
+import Page404 from '../../pages/404';
 
-const App = () => (
-  <ConnectedRouter history={history}>
-    <Route exact path={'/'} component={MainPage} />
-    <Route path={'/products/:id(\\d+)'} component={ProductPage} />
-  </ConnectedRouter>
-)
+class App extends React.Component {
+  componentDidMount() {
+    const { fetchProducts } = this.props;
+
+    fetchProducts();
+  }
+
+  renderProductPage = location => {
+    const id = toInt(location.pathname);
+
+    return <ProductPage id={id} />
+  }
+
+  render() {
+    return (
+      <ConnectedRouter history={history}>
+        <Switch>
+          <Route exact path={'/'} component={MainPage} />
+          <Route
+            exact path={'/products/:id(\\d+)'}
+            render={({ location }) => this.renderProductPage(location)}
+          />
+          <Route path="*" component={Page404} />
+        </Switch>
+      </ConnectedRouter>
+    )
+  }
+}
 
 export default App;
 

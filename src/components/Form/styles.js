@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const Container = styled.form`
+const Component = styled.form`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -31,7 +32,7 @@ const Label = styled.label`
   cursor: pointer;
 `
 
-const Button = styled.a`
+const Button = styled(Link)`
   display: inline-block;
 
   box-sizing: border-box;
@@ -52,4 +53,4 @@ const Button = styled.a`
   }
 `
 
-export { Container, Title, Label, Button };
+export { Component, Title, Label, Button };

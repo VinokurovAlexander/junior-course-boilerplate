@@ -2,18 +2,17 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Component } from './style';
 import CategoryButton from '../CategoryButton';
-import products from '../../products.json';
 const queryString = require('query-string');
 
-const getAllCategories = () => {
+const getAllCategories = products => {
   const allProductsCategories = products.map(product => product.category);
 
   return Array.from(new Set(allProductsCategories));
 }
 
-const categories = getAllCategories();
+const Categories = ({ location, products }) => {
+  const categories = getAllCategories(products);
 
-const Categories = ({ location }) => {
   const renderCategoryButtons = () => {
     const query = queryString.parse(location.search,
       {

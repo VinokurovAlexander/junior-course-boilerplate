@@ -1,12 +1,11 @@
 import { createSelector } from 'reselect';
-import { getDefaultMinPrice, getDefaultMaxPrice, isMatchesPrice } from './utils';
-import { DEFAULT_DISCOUNT_SIZE } from './constants';
-import products from '../../products.json';
+import { isMatchesPrice } from './utils';
+import { getProducts } from '../products';
 
 const initialState = {
-  min: getDefaultMinPrice(),
-  max: getDefaultMaxPrice(),
-  discount: DEFAULT_DISCOUNT_SIZE
+  min: 0,
+  max: 2000,
+  discount: 10
 }
 
 // Actions
@@ -46,5 +45,6 @@ export const setPrice = (inputName, changedValue) => ({
 export const getPrice = state => state.price;
 export const getProductsByPrice  = createSelector(
   getPrice,
-  currentPrice => products.filter(product => isMatchesPrice(product, currentPrice))
+  getProducts,
+  (currentPrice, products) => products.filter(product => isMatchesPrice(product, currentPrice))
 );
