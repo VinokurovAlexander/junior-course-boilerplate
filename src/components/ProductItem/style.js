@@ -6,6 +6,8 @@ const Color = {
   DISABLED: '#7E8FA4'
 }
 
+const ContentWrapper = styled.div``;
+
 const Image = styled.img`
   max-width: 100%;
   height: 200px;
@@ -17,13 +19,25 @@ const Image = styled.img`
 
 const Component = styled.div`
   position: relative;
+
   display: flex;
   flex-direction: ${props => props.isDetailPage ? 'row' : 'column'};
+  width: 100%;
+
   color: ${props => props.isInStock ? '#323c48' : Color.DISABLED};
 
   ${Image} {
     margin-right: ${props => props.isDetailPage ? '32px' : '0'};
+
   }
+
+  ${props => props.isDetailPage && `
+      ${ContentWrapper},
+      ${Image} {
+        width: 50%;
+      }
+  `}
+
 
   a {
     color: inherit;
@@ -80,4 +94,4 @@ const Price = styled.div`
   }
 `
 
-export { Component, InStock, Image, Title, Rating, Price };
+export { Component, InStock, Image, Title, Rating, Price, ContentWrapper };

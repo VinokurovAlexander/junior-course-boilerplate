@@ -1,13 +1,15 @@
 import React from 'react';
-import { Component, Image, Title, Rating, Price } from '../ProductItem/style';
+import { Component, Image, Title, Rating, Price, ContentWrapper } from '../ProductItem/style';
 import { GhostTitle, GhostRating, GhostPrice, GhostMainStyle } from './style';
 
-const ProductItemGhost = () => (
-  <Component>
+const ProductItemGhost = ({ isDetailPage }) => (
+  <Component isDetailPage={isDetailPage}>
     <Image as={GhostMainStyle} />
-    <Title as={GhostTitle} />
-    <Rating as={GhostRating} />
-    <Price as={GhostPrice} />
+    <ContentWrapper>
+      <Title as={GhostTitle} />
+      <Rating as={GhostRating} />
+      <Price as={GhostPrice} />
+    </ContentWrapper>
   </Component>
 )
 

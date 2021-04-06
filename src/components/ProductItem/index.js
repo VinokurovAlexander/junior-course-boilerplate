@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Component, InStock, Image, Title, Rating, Price } from './style';
+import { Component, InStock, Image, Title, Rating, Price, ContentWrapper } from './style';
 import RatingItem from '../Rating';
 import PriceItem from '../Price';
 
@@ -23,7 +23,7 @@ const ProductItem = ({
         {isInStock ? 'В наличии' : 'Недоступен'}
       </InStock>
       <Image src={img} alt='Изображение товара' />
-      <div>
+      <ContentWrapper>
         {id ? (
           <Link to={`products/${id}`}>
             <Title>{title}</Title>
@@ -37,7 +37,7 @@ const ProductItem = ({
           <PriceItem value={price} />
           <PriceItem isSmall value={price - price * (discount / 100) } />
         </Price>
-      </div>
+      </ContentWrapper>
     </Component>
 
 ProductItem.propTypes = {

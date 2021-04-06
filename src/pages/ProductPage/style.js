@@ -15,4 +15,8 @@ const Component = styled.div`
   }
 `;
 
-export { Component };
+const ItemWrapper = styled.div`
+  width: 480px;
+`
+
+export { Component, ItemWrapper };

@@ -1,22 +1,21 @@
 import React from 'react';
-import toInt from 'csssr-school-utils/lib/toInt';
-import { withRouter } from 'react-router-dom';
-import { Component } from './style';
+import PropTypes from 'prop-types';
+import { Component, ItemWrapper } from './style';
 import BackLink from '../../components/BackLink';
 import ProductItem from '../../components/ProductItem';
-import Background from '../../components/Background';
+import ErrorBackground from '../../components/ErrorBackground';
+import ProductItemGhost from '../../components/ProductItemGhost';
+import Title from '../../components/Title';
 
-const getProductById = (id, products) => products.filter(product => product.id === id);
+const ProductPage = ({ product, isLoading, isErrorInResponse }) => {
+  const isNeedRenderBackLink = !isLoading && !isErrorInResponse;
+  const TitleElement = isNeedRenderBackLink ? BackLink : Title;
 
-const ProductPage = ({ location: { pathname }, products }) => {
-  const id = toInt(pathname);
-  const [product] = getProductById(id, products);
-
-  const renderPage = product => {
+  const renderPage = () => {
     const { name, status, img, price, stars, discount } = product;
 
     return (
-      <>
+      <ItemWrapper>
         <ProductItem
           isInStock={status === 'IN_STOCK'}
           img={img}
@@ -26,16 +25,46 @@ const ProductPage = ({ location: { pathname }, products }) => {
           rating={stars}
           isDetailPage
         />
-      </>
+      </ItemWrapper>
     )
   }
 
+  const renderTitle = () => {
+    switch (true) {
+      case isLoading: {
+        return 'Пожалуйста, подождите'
+      }
+
+      case isErrorInResponse: {
+        return 'Произошла ошибка при загрузке данных'
+      }
+
+      case !product: {
+        return 'Товар не найден'
+      }
+
+      default: {
+        return product.name
+      }
+    }
+  }
+
+  const renderGhostItem = () => <ItemWrapper><ProductItemGhost isDetailPage /></ItemWrapper>;
+
   return (
     <Component>
-      <BackLink text={product ? product.name : 'Товар не найден'} />
-      {product ? renderPage(product) : <Background />}
+      <TitleElement text={renderTitle()} />
+      {isErrorInResponse ? <ErrorBackground /> :
+        isLoading ? renderGhostItem() :
+          product ? renderPage() : <ErrorBackground />}
     </Component>
   )
 }
 
-export default withRouter(ProductPage);
+ProductPage.propTypes = {
+  product: PropTypes.object,
+  isLoading: PropTypes.bool,
+  isErrorInResponse: PropTypes.bool
+}
+
+export default ProductPage;

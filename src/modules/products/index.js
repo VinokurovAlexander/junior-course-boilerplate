@@ -1,31 +1,45 @@
+import {createSelector} from 'reselect';
+
 const initialState = {
-  response: { result: 'OK', products: []},
-  isLoading: false
+  items: [],
+  isLoading: false,
+  isError: false
 }
 
 // Actions
 
-const SET_RESPONSE = 'my-app/products/SET_RESPONSE';
-const SET_LOADING = 'my-app/products/SET_LOADING'
+const START_LOADING = 'my-app/products/START_LOADING';
+const SUCCESS_LOADING = 'my-app/products/SUCCESS_LOADING'
+const ERROR_LOADING = 'my-app/products/ERROR_LOADING';
 
 // Reducer
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case SET_RESPONSE: {
+    case SUCCESS_LOADING: {
       const { response } = payload;
 
       return {
         ...state,
-        response,
-        isLoading: false
+        items: response.products,
+        isLoading: false,
+        isError: false
       }
     }
 
-    case SET_LOADING: {
+    case START_LOADING: {
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
+        isError: false
+      }
+    }
+
+    case ERROR_LOADING: {
+      return {
+        ...state,
+        isError: true,
+        isLoading: false
       }
     }
 
@@ -39,17 +53,21 @@ export default reducer;
 
 // Actions Creators
 
-const setResponse = response => ({
-  type: SET_RESPONSE,
+const setSuccessLoading = response => ({
+  type: SUCCESS_LOADING,
   payload: { response }
 })
 
-const setLoading = () => ({
-  type: SET_LOADING
+const setStartLoading = () => ({
+  type: START_LOADING
+})
+
+const setErrorLoading = () => ({
+  type: ERROR_LOADING
 })
 
 export const fetchProducts = () => dispatch => {
-  dispatch(setLoading());
+  dispatch(setStartLoading());
 
   fetch('https://course-api.school.csssr.com/products')
     .then(response => {
@@ -60,17 +78,31 @@ export const fetchProducts = () => dispatch => {
       }
     })
     .then(data => {
-      setTimeout(() => {
-        dispatch(setResponse(data))
-      }, 1500)
+      dispatch(setSuccessLoading(data))
     })
-    .catch(() => dispatch(setResponse({ result: 'ERROR', message: 'Возникла непредвиденная ошибка' })))
+    .catch(() => dispatch(setErrorLoading()))
 }
 
 // Selectors
 
-export const getProducts = state => state.products.response.products;
+export const getProducts = state => state.products.items;
 
 export const getLoadingStatus = state => state.products.isLoading;
 
-export const getResponseStatus = state => state.products.response.result;
+export const getResponseStatus = state => state.products.isError;
+
+const getIdFromProps = (state, props) => props.id;
+
+export const getProductById = createSelector(
+  getProducts,
+  getIdFromProps,
+  (products, id) => {
+    const result = products.filter(product => product.id === id);
+    const [product] = result;
+
+    return product;
+  }
+);
+
+
+

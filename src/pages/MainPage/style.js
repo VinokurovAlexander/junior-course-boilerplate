@@ -10,7 +10,7 @@ const Component = styled.div`
 
   max-width: 1346px;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 80px;
   padding-left: 30px;
   padding-right: 30px;
 

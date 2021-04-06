@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
+import { toInt } from 'csssr-school-utils';
 import MainPage from '../../containers/MainPage';
 import ProductPage from '../../containers/ProductPage';
 import { history } from '../../store';
@@ -13,12 +14,21 @@ class App extends React.Component {
     fetchProducts();
   }
 
+  renderProductPage = location => {
+    const id = toInt(location.pathname);
+
+    return <ProductPage id={id} />
+  }
+
   render() {
     return (
       <ConnectedRouter history={history}>
         <Switch>
           <Route exact path={'/'} component={MainPage} />
-          <Route exact path={'/products/:id(\\d+)'} component={ProductPage} />
+          <Route
+            exact path={'/products/:id(\\d+)'}
+            render={({ location }) => this.renderProductPage(location)}
+          />
           <Route path="*" component={Page404} />
         </Switch>
       </ConnectedRouter>

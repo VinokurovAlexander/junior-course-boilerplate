@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import PageLink from '../../components/PageLink';
 import { Component } from './style';
+import { getQueryParams } from '../../utils';
 const queryString = require('query-string');
 
 const PAGE_LINK_NEIGHBOUR_COUNT = 1;
@@ -25,12 +26,7 @@ export const getRange = (from, to, step = 1) => {
 class Navigation extends React.PureComponent {
   getPageUrl = index => {
     const { location } = this.props;
-    const query = location.search;
-    const parsedQuery = queryString.parse(query,
-      {
-        arrayFormat: 'comma',
-        parseNumbers: true
-      });
+    const parsedQuery = getQueryParams(location);
 
     return `?${queryString.stringify({...parsedQuery, page: index}, { skipEmptyString: true, arrayFormat: 'comma' })}`;
   }

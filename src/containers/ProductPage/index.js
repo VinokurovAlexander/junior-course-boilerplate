@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import ProductPageUI from '../../pages/ProductPage';
-import { getProducts } from '../../modules/products';
+import { getLoadingStatus, getProductById, getResponseStatus } from '../../modules/products';
 
-const mapStateToProps = state => ({
-  products: getProducts(state)
+const mapStateToProps = (state, props) => ({
+  product: getProductById(state, props),
+  isLoading: getLoadingStatus(state),
+  isErrorInResponse: getResponseStatus(state)
 })
 
 const ProductPage = connect(mapStateToProps)(ProductPageUI);
