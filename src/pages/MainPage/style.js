@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Component as Form } from '../../components/Form/styles';
+import { Component as Form } from '../../components/Form/style';
+import { Component as Cart } from '../../components/Cart/style';
 
 const Component = styled.div`
   position: relative;
@@ -10,17 +11,24 @@ const Component = styled.div`
 
   max-width: 1346px;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
 
   ${Form} {
-    align-self: flex-start;
+    width: 256px;
+    margin-right: 48px;
+  }
+
+  ${Cart} {
+    width: 256px;
+    margin-left: 48px;
   }
 `
 
 const Content = styled.div`
   display: flex;
+  align-items: flex-start;
 `
 
 const ListWrapper = styled.div`

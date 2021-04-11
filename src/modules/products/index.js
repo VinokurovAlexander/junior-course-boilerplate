@@ -95,11 +95,11 @@ export const getLoadingStatus = state => state.products.isLoading;
 
 export const getResponseStatus = state => state.products.isError;
 
-const getIdFromProps = (state, props) => props.id;
+export const getProductIdFromProps = (state, props) => props.id;
 
 export const getProductById = createSelector(
   getProducts,
-  getIdFromProps,
+  getProductIdFromProps,
   (products, id) => {
     const result = products.filter(product => product.id === id);
     const [product] = result;

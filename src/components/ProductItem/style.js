@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 import { Component as RatingItem } from '../Rating/style.js';
 import { Component as PriceItem } from '../Price/style';
+import { Button as BaseButton } from '../../style';
 
 const Color = {
   DISABLED: '#7E8FA4'
 }
 
-const ContentWrapper = styled.div``;
+const ContentWrapper = styled.div`
+  flex-shrink: 0;
+`;
 
 const Image = styled.img`
   max-width: 100%;
@@ -88,10 +91,18 @@ const Rating = styled.div`
 const Price = styled.div`
   display: flex;
   align-items: flex-end;
+  margin-bottom: 15px;
 
   ${PriceItem}:first-child {
     margin-right: 10px;
   }
 `
 
-export { Component, InStock, Image, Title, Rating, Price, ContentWrapper };
+const Button = styled(BaseButton)`
+  &:disabled {
+    border-color: lightgrey;
+    color: lightgrey;
+  }
+`
+
+export { Component, InStock, Image, Title, Rating, Price, ContentWrapper, Button };

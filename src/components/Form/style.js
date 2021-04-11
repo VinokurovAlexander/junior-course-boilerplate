@@ -1,14 +1,11 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Button as BaseButton } from '../../style';
 
 const Component = styled.form`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   flex-shrink: 0;
-
-  width: 256px;
-  margin-right: 48px;
 `
 
 const Title = styled.h2`
@@ -32,25 +29,8 @@ const Label = styled.label`
   cursor: pointer;
 `
 
-const Button = styled(Link)`
-  display: inline-block;
-
-  box-sizing: border-box;
-  width: 100%;
+const Button = styled(BaseButton)`
   margin-top: 24px;
-  padding: 9px 15px;
-
-  border: 1px solid #323c48;
-  background-color: transparent;
-  color: #323c48;
-  text-align: center;
-  cursor: pointer;
-  transition: opacity ease-in 0.3s;
-  outline: none;
-
-  &:hover {
-    opacity: 0.7;
-  }
 `
 
 export { Component, Title, Label, Button };

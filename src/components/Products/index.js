@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProductItem from '../ProductItem';
+import ProductItem from '../../containers/ProductItem';
 import { Component, ListItem } from './style';
 
 const Products = ({ products }) => (

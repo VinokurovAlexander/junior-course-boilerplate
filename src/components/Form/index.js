@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Component, Title, Label, Button } from './styles';
+import { Link } from 'react-router-dom';
+import { Component, Title, Label, Button } from './style';
 import Input from '../Input';
 import Categories from '../../containers/Categories';
 
@@ -26,7 +27,7 @@ const Form = ({
     </Label>
     <Title>Категории</Title>
     <Categories />
-    <Button to='/'>
+    <Button to='/' as={Link}>
       Cбросить фильтры
     </Button>
   </Component>
