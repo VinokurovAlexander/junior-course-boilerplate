@@ -26,10 +26,10 @@ class App extends React.Component {
         <Switch>
           <Route exact path={'/'} component={MainPage} />
           <Route
-            exact path={'/products/:id(\\d+)'}
+            exact path={'/product/:id(\\d+)'}
             render={({ location }) => this.renderProductPage(location)}
           />
-          <Route path="*" component={Page404} />
+          <Route component={Page404} />
         </Switch>
       </ConnectedRouter>
     )

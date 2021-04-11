@@ -10,6 +10,7 @@ import ProductsGhost from '../../components/ProductsGhost';
 import ErrorBackground from '../../components/ErrorBackground';
 import { PRODUCTS_ON_PAGE_COUNT } from '../../constants';
 import { getQueryParams } from '../../utils';
+import Cart from '../../containers/Cart';
 
 export const getProductsByPage = (checkedCategories, productsByPrice, products) => {
   const isMatchesCategory = (product, checkedCategories) =>
@@ -35,6 +36,7 @@ const MainPage = ({ isLoading, isErrorInResponse, products, location, productsBy
       <ListWrapper>
         <List products={currentProductsOnPage} pagesCount={pagesCount} />
       </ListWrapper>
+      <Cart />
     </Content>
   )
 

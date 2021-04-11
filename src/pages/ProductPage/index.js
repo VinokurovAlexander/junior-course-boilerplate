@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Component, ItemWrapper } from './style';
 import BackLink from '../../components/BackLink';
-import ProductItem from '../../components/ProductItem';
+import ProductItem from '../../containers/ProductItem';
 import ErrorBackground from '../../components/ErrorBackground';
 import ProductItemGhost from '../../components/ProductItemGhost';
 import Title from '../../components/Title';
@@ -12,11 +12,12 @@ const ProductPage = ({ product, isLoading, isErrorInResponse }) => {
   const TitleElement = isNeedRenderBackLink ? BackLink : Title;
 
   const renderPage = () => {
-    const { name, status, img, price, stars, discount } = product;
+    const { name, status, img, price, stars, discount, id } = product;
 
     return (
       <ItemWrapper>
         <ProductItem
+          id={id}
           isInStock={status === 'IN_STOCK'}
           img={img}
           title={name}
