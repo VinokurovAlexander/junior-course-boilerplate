@@ -152,7 +152,7 @@ export const getItemsCount = state => state.cart.items.length;
 export const isInCart = createSelector(
   getItems,
   getProductIdFromProps,
-  (items, id) => !!(items.find(itemId => itemId === id))
+  (items, id) => items.some(itemId => itemId === id)
 )
 
 export const getLoadingStatus = state => state.cart.isLoading;
