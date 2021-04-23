@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Component as Form } from '../../components/Form/style';
 import { Component as Cart } from '../../components/Cart/style';
+import { Component as Title } from '../../components/Title/style';
 
 const Component = styled.div`
   position: relative;
@@ -24,16 +25,22 @@ const Component = styled.div`
     width: 256px;
     margin-left: 48px;
   }
+
+  ${Title} {
+    margin-bottom: 56px;
+  }
 `
 
 const Content = styled.div`
   display: flex;
   align-items: flex-start;
+  justify-content: flex-end;
+
+  width: 100%;
 `
 
 const ListWrapper = styled.div`
   width: 736px;
-  margin: 0 auto;
 `
 
 export { Component, Content, ListWrapper }

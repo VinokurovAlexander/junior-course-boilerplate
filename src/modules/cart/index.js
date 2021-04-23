@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
-import { getProductIdFromProps } from '../products';
+import { getProductIdFromProps, getProducts } from '../products';
 
 const initialState = {
-  items: [],
+  items: [1, 2, 3],
   isLoading: false,
   isError: false,
   isSaved: false
@@ -148,6 +148,19 @@ export const saveCart = items => dispatch => {
 export const getItems = state => state.cart.items;
 
 export const getItemsCount = state => state.cart.items.length;
+
+export const getItemsById = createSelector(
+  getProducts,
+  getItems,
+  (allItems, itemsInCart) => allItems.filter(({ id }) => itemsInCart.includes(id))
+)
+
+export const getItemsCoast = createSelector(
+  getItemsById,
+  items => items.reduce((acc, { price: currentPrice }) => (
+      acc + currentPrice
+  ), 0)
+);
 
 export const isInCart = createSelector(
   getItems,

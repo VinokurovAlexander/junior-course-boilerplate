@@ -7,8 +7,8 @@ const Component = styled.div`
   flex-direction: column;
 
   width: 100%;
-  height: calc(100vh - 80px);
-  padding-top: 80px;
+  height: calc(100vh - 30px);
+  padding-top: 30px;
 
   ${Title} {
     margin-bottom: 56px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Component } from './styles';
+import { Component } from './style';
 
 const Title = ({ text }) => <Component>{text}</Component>
 

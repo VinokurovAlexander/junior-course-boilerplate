@@ -98,11 +98,6 @@ const Price = styled.div`
   }
 `
 
-const Button = styled(BaseButton)`
-  &:disabled {
-    border-color: lightgrey;
-    color: lightgrey;
-  }
-`
+const Button = styled(BaseButton)``;
 
 export { Component, InStock, Image, Title, Rating, Price, ContentWrapper, Button };

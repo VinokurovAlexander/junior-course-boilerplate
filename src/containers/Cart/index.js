@@ -8,7 +8,8 @@ import {
   getSavedStatus,
   saveCart,
   clearCart,
-  getErrorStatus
+  getErrorStatus,
+  getItemsCoast
 } from '../../modules/cart';
 
 const mapStateToProps = state => ({
@@ -16,7 +17,8 @@ const mapStateToProps = state => ({
   items: getItems(state),
   isLoading: getLoadingStatus(state),
   isSaved: getSavedStatus(state),
-  isError: getErrorStatus(state)
+  isError: getErrorStatus(state),
+  itemsCoast: getItemsCoast(state)
 })
 
 const mapDispatchToProps = dispatch => {
