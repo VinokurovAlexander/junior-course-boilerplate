@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 import CartIcon from './icon-cart.svg';
+import { Component as Price } from '../Price/style';
+import { Component as BaseButton } from '../Button/style';
 
 const Component = styled.div`
   display: flex;
   flex-direction: column;
+
+  ${BaseButton} {
+    margin-bottom: 16px;
+  }
 `;
 
 const Title = styled.span`
@@ -49,6 +55,30 @@ const Icon = styled.img`
 `
 
 const Text = styled.p`
+  margin-top: 0;
 `
 
-export { Component, Title, TextWrapper, Value, Icon, Text };
+const CartLink = styled.a`
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity ease-in 0.3s;
+  text-align: center;
+
+  &:hover {
+    opacity: 0.5;
+  }
+`
+
+const Info = styled.div`
+  font-size: 14px;
+  font-weight: 600;
+
+  ${Value},
+  ${Price} {
+    margin-left: 15px;
+  }
+`
+
+export { Component, Title, TextWrapper, Value, Icon, Text, CartLink, Info };

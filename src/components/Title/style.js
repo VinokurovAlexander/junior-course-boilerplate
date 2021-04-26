@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Component = styled.h1`
   width: 100%;
   margin-top: 0;
-  margin-bottom: 56px;
+  margin-bottom: 0;
 
   font-weight: 300;
   font-size: 36px;

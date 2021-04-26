@@ -42,6 +42,8 @@ const Button = styled.button`
 
   &:disabled {
     pointer-events: none;
+    border-color: lightgrey;
+    color: lightgrey;
   }
 `
 

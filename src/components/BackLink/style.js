@@ -3,7 +3,10 @@ import ArrowIcon from './arrow.svg';
 
 const Component = styled.button`
   position: relative;
+
   padding-left: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
 
   background-color: transparent;
   border: none;
@@ -12,13 +15,6 @@ const Component = styled.button`
 
   &:hover {
     opacity: 0.5;
-  }
-
-  h2 {
-      margin: 0;
-
-      font-size: 36px;
-      font-weight: 300;
   }
 
   &:before {

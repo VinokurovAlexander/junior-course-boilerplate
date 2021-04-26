@@ -15,7 +15,7 @@ const Component = styled.a`
   border: 1px solid ${props => props.$isActive ? '#5695ed' : '#c5cfde'};
   font-size: 14px;
   cursor: 'pointer';
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease-in;
 
   &:hover {
     opacity: 0.5;

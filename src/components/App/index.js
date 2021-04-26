@@ -6,6 +6,7 @@ import MainPage from '../../containers/MainPage';
 import ProductPage from '../../containers/ProductPage';
 import { history } from '../../store';
 import Page404 from '../../pages/404';
+import CartPage from '../../containers/CartPage';
 
 class App extends React.Component {
   componentDidMount() {
@@ -29,6 +30,7 @@ class App extends React.Component {
             exact path={'/product/:id(\\d+)'}
             render={({ location }) => this.renderProductPage(location)}
           />
+          <Route exact path={'/cart'} component={CartPage} />
           <Route component={Page404} />
         </Switch>
       </ConnectedRouter>
